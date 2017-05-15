@@ -3,7 +3,26 @@
 Docker images for running tests of the Symfony Intl Component against various
 ICU/Intl versions. These images are not meant to be used on production systems.
 
-## Generating docker files
+## Supported versions
+
+* PHP 5.3 - 7.1
+* ICU 4.4.2 - 59.1
+
+## Usage
+
+Images are tagged with a PHP version and an ICU release separated with a dash.
+For example, the tag for `PHP 7.1` and `ICU 59.1` is `7.1-59.1`.
+
+```bash
+docker run -it --rm \
+  -v `pwd`:/symfony -w /symfony \
+  jakzal/php-intl:7.1-59.1 \
+  ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
+```
+
+## Image development
+
+### Generating docker files
 
 The following command will re-generate all the `Dockerfile`s that then can
 be used to build PHP images with intl support:
@@ -12,7 +31,7 @@ be used to build PHP images with intl support:
 make generate
 ```
 
-## Building images
+### Building images
 
 Build all images (will take a lot of time):
 
