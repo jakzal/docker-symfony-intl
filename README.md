@@ -51,7 +51,7 @@ Build the latest PHP version with a chosen ICU release:
 make build ICU_RELEASE=59.1
 ```
 
-Build a chosen PHP version with a chose ICU release:
+Build a chosen PHP version with a chosen ICU release:
 
 ```bash
 make build ICU_RELEASE=59.1 PHP_VERSION=7.1
