@@ -1,0 +1,17 @@
+language: bash
+sudo: required
+
+services:
+  - docker
+
+matrix:
+  include:
+  - env: ICU_VERSION=61.1 PHP_VERSION=5.3
+
+script:
+  - make build ICU_VERSION=$ICU_VERSION PHP_VERSION=$PHP_VERSION
+  - docker run -it --rm jakzal/php-intl:$PHP_VERSION-$ICU_VERSION sh -c "icu-config --version && php -i | grep 'ICU version'"
+
+after_script:
+  - docker images
+
