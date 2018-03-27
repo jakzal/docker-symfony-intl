@@ -6,17 +6,17 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 ## Supported versions
 
 * PHP 5.3 - 7.0
-* ICU 4.4.2 - 60.2
+* ICU 4.4.2 - 61.1
 
 ## Usage
 
 Images are tagged with a PHP version and an ICU release separated with a dash.
-For example, the tag for `PHP 5.3` and `ICU 60.2` is `5.3-60.2`.
+For example, the tag for `PHP 5.3` and `ICU 61.1` is `5.3-61.1`.
 
 ```bash
 docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
-  jakzal/php-intl:5.3-60.2 \
+  jakzal/php-intl:5.3-61.1 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
 ```
 
@@ -48,11 +48,11 @@ make build
 Build the latest PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=60.2
+make build ICU_VERSION=61.1
 ```
 
 Build a chosen PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=60.2 PHP_VERSION=5.3
+make build ICU_VERSION=61.1 PHP_VERSION=5.3
 ```
