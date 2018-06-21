@@ -6,7 +6,7 @@ services:
 
 matrix:
   include:
-  - env: ICU_VERSION=61.1 PHP_VERSION=7.2
+  - env: ICU_VERSION=62.1 PHP_VERSION=7.2
 
 script:
   - make build ICU_VERSION=$ICU_VERSION PHP_VERSION=$PHP_VERSION
