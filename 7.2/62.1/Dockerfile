@@ -3,10 +3,11 @@ FROM php:7.2-cli
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file g++ gcc libc-dev make pkg-config re2c"
 ENV LIB_DEPS="zlib1g-dev"
+ENV TOOL_DEPS="git"
 ENV ICU_RELEASE=62.1
 ENV CXXFLAGS "--std=c++0x"
 
-RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LIB_DEPS && rm -rf /var/lib/apt/lists/* \
+RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LIB_DEPS $TOOL_DEPS && rm -rf /var/lib/apt/lists/* \
  && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini \
  && docker-php-ext-install zip \
  && cd /tmp && curl -Ls http://download.icu-project.org/files/icu4c/$ICU_RELEASE/icu4c-$(echo $ICU_RELEASE | tr '.' '_')-src.tgz > icu4c-src.tgz \
