@@ -6,9 +6,12 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 ## Supported versions
 
 * PHP 7.1 - 7.2
-* ICU 4.4.2 - 62.1
+* ICU 52.1 - 62.1
 
-For older PHP versions check out the legacy branch.
+For older PHP or ICU versions check out the legacy branches:
+
+* [legacy-5.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-5.x)
+* [legacy-7.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-7.x)
 
 ## Usage
 
@@ -20,6 +23,12 @@ docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
   jakzal/php-intl:7.2-62.1 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
+```
+
+To list all available tags run the following command (requires [jq](https://stedolan.github.io/jq/) to be installed):
+
+```bash
+curl -Ls https://registry.hub.docker.com/v1/repositories/jakzal/php-intl/tags | jq .[].name --raw-output
 ```
 
 ## Image development
