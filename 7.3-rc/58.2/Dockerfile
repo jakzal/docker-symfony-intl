@@ -1,10 +1,10 @@
-FROM php:7.2-cli
+FROM php:7.3-rc-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file g++ gcc libc-dev make pkg-config re2c"
 ENV LIB_DEPS="zlib1g-dev libzip-dev"
 ENV TOOL_DEPS="git"
-ENV ICU_RELEASE=62.1
+ENV ICU_RELEASE=58.2
 ENV CXXFLAGS "--std=c++0x"
 
 RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LIB_DEPS $TOOL_DEPS && rm -rf /var/lib/apt/lists/* \
