@@ -1,4 +1,4 @@
-FROM php:7.3-rc-cli
+FROM php:7.3-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file g++ gcc libc-dev make pkg-config re2c"
