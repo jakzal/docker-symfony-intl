@@ -6,7 +6,7 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 ## Supported versions
 
 * PHP 7.1 - 7.3
-* ICU 52.1 - 63.1
+* ICU 52.1 - 64.1
 
 For older PHP or ICU versions check out the legacy branches:
 
@@ -16,12 +16,12 @@ For older PHP or ICU versions check out the legacy branches:
 ## Usage
 
 Images are tagged with a PHP version and an ICU release separated with a dash.
-For example, the tag for `PHP 7.2` and `ICU 63.1` is `7.2-63.1`.
+For example, the tag for `PHP 7.2` and `ICU 64.1` is `7.2-64.1`.
 
 ```bash
 docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
-  jakzal/php-intl:7.2-63.1 \
+  jakzal/php-intl:7.2-64.1 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
 ```
 
@@ -59,11 +59,11 @@ make build
 Build the latest PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=63.1
+make build ICU_VERSION=64.1
 ```
 
 Build a chosen PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=63.1 PHP_VERSION=7.2
+make build ICU_VERSION=64.1 PHP_VERSION=7.2
 ```
