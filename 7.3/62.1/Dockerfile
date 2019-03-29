@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LI
  && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini \
  && docker-php-ext-install zip \
  && cd /tmp && curl -Ls http://download.icu-project.org/files/icu4c/$ICU_RELEASE/icu4c-$(echo $ICU_RELEASE | tr '.' '_')-src.tgz > icu4c-src.tgz \
- && cd /tmp && tar xzf icu4c-src.tgz && cd /tmp/icu/source && ./runConfigureICU Linux --disable-renaming && make && make install && rm -rf /tmp/icu /tmp/icu4c-src.tgz \
+ && cd /tmp && tar xzf icu4c-src.tgz && cd /tmp/icu/source && ./runConfigureICU Linux && make && make install && rm -rf /tmp/icu /tmp/icu4c-src.tgz \
  && docker-php-ext-configure intl && docker-php-ext-install intl \
  && apt-get purge -y --auto-remove $BUILD_DEPS
 
