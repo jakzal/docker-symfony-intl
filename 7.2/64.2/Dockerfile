@@ -1,4 +1,4 @@
-FROM php:7.3-cli
+FROM php:7.2-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file pkg-config re2c python"
