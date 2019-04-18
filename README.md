@@ -67,3 +67,39 @@ Build a chosen PHP version with a chosen ICU release:
 ```bash
 make build ICU_VERSION=64.2 PHP_VERSION=7.2
 ```
+
+## Running Symfony Intl tests
+
+It's best to run these tests on a system that natively supports Docker.
+If you're not a Linux desktop user, you can create a digitalocean droplet with little effort (or use other cloud provider):
+
+```bash
+docker-machine create --driver digitalocean --digitalocean-access-token $DIGITAL_OCEAN_ACCESS_TOKEN \
+                                            --digitalocean-image "ubuntu-18-10-x64" \
+                                            --digitalocean-size "2gb" \
+                                            --digitalocean-region "lon1" \
+                                            symfony-intl
+eval "$(docker-machine env symfony-intl)"
+docker run --rm -it  jakzal/php-intl:7.3-64.2 bash
+```
+
+Clone the Symfony repository and switch to the branch you want to test:
+
+```bash
+git clone https://github.com/jakzal/symfony.git \
+  && cd symfony \
+  && git checkout icu-64.2 \
+  && composer install
+```
+
+Run all `intl-data` tests:
+
+```bash
+./phpunit --group intl-data
+```
+
+Destroy the droplet when you're done:
+
+```bash
+docker-machine rm symfony-intl
+```
