@@ -6,7 +6,7 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 ## Supported versions
 
 * PHP 7.1 - 7.3
-* ICU 52.1 - 64.2
+* ICU 63.1 - 64.2
 
 For older PHP or ICU versions check out the legacy branches:
 
