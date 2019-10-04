@@ -75,7 +75,7 @@ If you're not a Linux desktop user, you can create a digitalocean droplet with l
 
 ```bash
 docker-machine create --driver digitalocean --digitalocean-access-token $DIGITAL_OCEAN_ACCESS_TOKEN \
-                                            --digitalocean-image "ubuntu-18-10-x64" \
+                                            --digitalocean-image "ubuntu-19-04-x64" \
                                             --digitalocean-size "2gb" \
                                             --digitalocean-region "lon1" \
                                             symfony-intl
