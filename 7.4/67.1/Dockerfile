@@ -1,10 +1,10 @@
-FROM php:7.3-cli
+FROM php:7.4-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file pkg-config re2c python"
 ENV LIB_DEPS="zlib1g-dev libzip-dev"
 ENV TOOL_DEPS="git build-essential"
-ENV ICU_RELEASE=64.1
+ENV ICU_RELEASE=67.1
 ENV CXXFLAGS "--std=c++0x"
 
 RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LIB_DEPS $TOOL_DEPS && rm -rf /var/lib/apt/lists/* \

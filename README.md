@@ -5,8 +5,8 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 
 ## Supported versions
 
-* PHP 7.1 - 7.3
-* ICU 63.1 - 65.1
+* PHP 7.3 - 7.4
+* ICU 66.1 - 68.1
 
 For older PHP or ICU versions check out the legacy branches:
 
@@ -16,12 +16,12 @@ For older PHP or ICU versions check out the legacy branches:
 ## Usage
 
 Images are tagged with a PHP version and an ICU release separated with a dash.
-For example, the tag for `PHP 7.2` and `ICU 65.1` is `7.2-65.1`.
+For example, the tag for `PHP 7.4` and `ICU 68.1` is `7.4-68.1`.
 
 ```bash
 docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
-  jakzal/php-intl:7.2-65.1 \
+  jakzal/php-intl:7.4-68.1 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
 ```
 
@@ -59,13 +59,13 @@ make build
 Build the latest PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=65.1
+make build ICU_VERSION=68.1
 ```
 
 Build a chosen PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=65.1 PHP_VERSION=7.2
+make build ICU_VERSION=68.1 PHP_VERSION=7.4
 ```
 
 ## Running Symfony Intl tests
@@ -76,11 +76,11 @@ If you're not a Linux desktop user, you can create a digitalocean droplet with l
 ```bash
 docker-machine create --driver digitalocean --digitalocean-access-token $DIGITAL_OCEAN_ACCESS_TOKEN \
                                             --digitalocean-image "ubuntu-19-04-x64" \
-                                            --digitalocean-size "2gb" \
+                                            --digitalocean-size "4gb" \
                                             --digitalocean-region "lon1" \
                                             symfony-intl
 eval "$(docker-machine env symfony-intl)"
-docker run --rm -it  jakzal/php-intl:7.3-65.1 bash
+docker run --rm -it  jakzal/php-intl:7.4-68.1 bash
 ```
 
 Clone the Symfony repository and switch to the branch you want to test:
@@ -88,7 +88,7 @@ Clone the Symfony repository and switch to the branch you want to test:
 ```bash
 git clone https://github.com/jakzal/symfony.git \
   && cd symfony \
-  && git checkout icu-65.1 \
+  && git checkout icu-68.1 \
   && composer install
 ```
 
