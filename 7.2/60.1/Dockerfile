@@ -2,7 +2,7 @@ FROM php:7.2-cli
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV BUILD_DEPS="autoconf file g++ gcc libc-dev make pkg-config re2c"
-ENV LIB_DEPS="zlib1g-dev"
+ENV LIB_DEPS="zlib1g-dev libzip-dev"
 ENV ICU_RELEASE=60.1
 ENV CXXFLAGS "--std=c++0x"
 
