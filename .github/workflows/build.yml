@@ -1,0 +1,26 @@
+name: Build
+
+on:
+    push:
+    pull_request:
+
+jobs:
+
+    tests:
+        name: Docker
+        runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                php: ['7.4']
+                icu: ['68.1']
+
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v2
+
+            -   name: Build the image
+                run: |
+                    make build ICU_VERSION=${{ matrix.icu }} PHP_VERSION=${{ matrix.php }}
+                    docker run -it --rm jakzal/php-intl:${{ matrix.icu }}-${{ matrix.php }} sh -c "icu-config --version && php -i | grep 'ICU version'"
+                    docker images
