@@ -1,7 +1,7 @@
 #!/bin/bash
 
-PHP_VERSIONS=(7.1 7.2 7.3)
-ICU_RELEASES=(63.1 64.1 64.2 65.1)
+PHP_VERSIONS=(7.3 7.4 8.0)
+ICU_RELEASES=(66.1 67.1 68.1)
 
 for icu_release in "${ICU_RELEASES[@]}"; do
     for php_version in "${PHP_VERSIONS[@]}"; do
