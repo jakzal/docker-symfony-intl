@@ -8,9 +8,5 @@ generate:
 .PHONY: generate
 
 build:
-	./build.sh $(PHP_VERSION) $(ICU_VERSION)
+	docker build . --build-arg PHP_VERSION=$(PHP_VERSION) --build-arg ICU_VERSION=$(ICU_VERSION) -t "jakzal/php-intl:$(PHP_VERSION)-$(ICU_VERSION)"
 .PHONY: build
-
-build-all:
-	./build.sh
-.PHONY: build-all

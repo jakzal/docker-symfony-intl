@@ -12,6 +12,7 @@ For older PHP or ICU versions check out the legacy branches:
 
 * [legacy-5.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-5.x)
 * [legacy-7.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-7.x)
+* [legacy-8.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-8.x)
 
 ## Usage
 
@@ -33,22 +34,7 @@ curl -Ls https://registry.hub.docker.com/v1/repositories/jakzal/php-intl/tags | 
 
 ## Image development
 
-### Generating docker files
-
-The following command will re-generate all the `Dockerfile`s that then can
-be used to build PHP images with intl support:
-
-```bash
-make generate
-```
-
 ### Building images
-
-Build all images (will take a lot of time):
-
-```bash
-make build-all
-```
 
 Build the latest PHP version with the latest ICU release:
 
