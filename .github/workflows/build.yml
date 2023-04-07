@@ -12,8 +12,8 @@ jobs:
 
         strategy:
             matrix:
-                php: ['8.0']
-                icu: ['68.2']
+                php: ['8.2']
+                icu: ['71.1']
 
         steps:
             -   name: Checkout
