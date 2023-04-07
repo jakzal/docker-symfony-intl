@@ -29,7 +29,7 @@ docker run -it --rm \
 To list all available tags run the following command (requires [jq](https://stedolan.github.io/jq/) to be installed):
 
 ```bash
-curl -Ls https://registry.hub.docker.com/v2/repositories/jakzal/php-intl/tags | jq '.results[].name' --raw-output
+curl -Ls 'https://registry.hub.docker.com/v2/repositories/jakzal/php-intl/tags?page_size=20' | jq '.results[].name' --raw-output | sort
 ```
 
 ## Image development
