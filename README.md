@@ -6,13 +6,9 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 ## Supported versions
 
 * PHP 8.1, 8.2
-* ICU 66.1 - 71.1
+* ICU 70.1 - 71.1
 
-For older PHP or ICU versions check out the legacy branches:
-
-* [legacy-5.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-5.x)
-* [legacy-7.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-7.x)
-* [legacy-8.x](https://github.com/jakzal/docker-symfony-intl/tree/legacy-8.x)
+For older PHP or ICU versions check out older [Docker image tags](https://hub.docker.com/repository/docker/jakzal/php-intl/tags).
 
 ## Usage
 
