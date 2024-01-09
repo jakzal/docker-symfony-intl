@@ -1,5 +1,5 @@
 ICU_VERSION ?= 74.2
-PHP_VERSION ?= 8.2
+PHP_VERSION ?= 8.3
 
 default: build
 

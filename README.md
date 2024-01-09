@@ -5,7 +5,7 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 
 ## Supported versions
 
-* PHP 8.1, 8.2
+* PHP 8.1 - 8.3
 * ICU 73.2 - 74.2
 
 For older PHP or ICU versions check out older [Docker image tags](https://hub.docker.com/repository/docker/jakzal/php-intl/tags).
@@ -13,12 +13,12 @@ For older PHP or ICU versions check out older [Docker image tags](https://hub.do
 ## Usage
 
 Images are tagged with a PHP version and an ICU release separated with a dash.
-For example, the tag for `PHP 8.2` and `ICU 74.2` is `8.2-74.2`.
+For example, the tag for `PHP 8.3` and `ICU 74.2` is `8.3-74.2`.
 
 ```bash
 docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
-  jakzal/php-intl:8.2-74.2 \
+  jakzal/php-intl:8.3-74.2 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
 ```
 
@@ -47,7 +47,7 @@ make build ICU_VERSION=74.2
 Build a chosen PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=74.2 PHP_VERSION=8.2
+make build ICU_VERSION=74.2 PHP_VERSION=8.3
 ```
 
 ## Running Symfony Intl tests
@@ -62,7 +62,7 @@ docker-machine create --driver digitalocean --digitalocean-access-token $DIGITAL
                                             --digitalocean-region "lon1" \
                                             symfony-intl
 eval "$(docker-machine env symfony-intl)"
-docker run --rm -it  jakzal/php-intl:8.2-74.2 bash
+docker run --rm -it  jakzal/php-intl:8.3-74.2 bash
 ```
 
 Clone the Symfony repository and switch to the branch you want to test:

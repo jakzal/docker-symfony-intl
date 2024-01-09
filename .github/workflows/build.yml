@@ -14,7 +14,7 @@ jobs:
 
         strategy:
             matrix:
-                php: ['8.1', '8.2']
+                php: ['8.1', '8.2', '8.3']
                 icu: ['73.2', '74.2']
 
         steps:
