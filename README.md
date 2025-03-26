@@ -5,20 +5,20 @@ ICU/Intl versions. These images are not meant to be used on production systems.
 
 ## Supported versions
 
-* PHP 8.1 - 8.3
-* ICU 73.2 - 74.1
+* PHP 8.1 - 8.4
+* ICU 75.1 - 77.1
 
 For older PHP or ICU versions check out older [Docker image tags](https://hub.docker.com/repository/docker/jakzal/php-intl/tags).
 
 ## Usage
 
 Images are tagged with a PHP version and an ICU release separated with a dash.
-For example, the tag for `PHP 8.3` and `ICU 74.1` is `8.3-74.1`.
+For example, the tag for `PHP 8.4` and `ICU 77.1` is `8.4-77.1`.
 
 ```bash
 docker run -it --rm \
   -v `pwd`:/symfony -w /symfony \
-  jakzal/php-intl:8.3-74.1 \
+  jakzal/php-intl:8.4-77.1 \
   ./phpunit /symfony/src/Symfony/Component/Intl/Tests/
 ```
 
@@ -41,13 +41,13 @@ make build
 Build the latest PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=74.1
+make build ICU_VERSION=77.1
 ```
 
 Build a chosen PHP version with a chosen ICU release:
 
 ```bash
-make build ICU_VERSION=74.1 PHP_VERSION=8.3
+make build ICU_VERSION=77.1 PHP_VERSION=8.4
 ```
 
 ## Running Symfony Intl tests
@@ -62,7 +62,7 @@ docker-machine create --driver digitalocean --digitalocean-access-token $DIGITAL
                                             --digitalocean-region "lon1" \
                                             symfony-intl
 eval "$(docker-machine env symfony-intl)"
-docker run --rm -it  jakzal/php-intl:8.3-74.1 bash
+docker run --rm -it  jakzal/php-intl:8.4-77.1 bash
 ```
 
 Clone the Symfony repository and switch to the branch you want to test:
@@ -70,7 +70,7 @@ Clone the Symfony repository and switch to the branch you want to test:
 ```bash
 git clone https://github.com/jakzal/symfony.git \
   && cd symfony \
-  && git checkout icu-74.1 \
+  && git checkout icu-77.1 \
   && composer install
 ```
 

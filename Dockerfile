@@ -1,5 +1,5 @@
-ARG PHP_VERSION=8.3
-ARG ICU_VERSION=74.1
+ARG PHP_VERSION=8.4
+ARG ICU_VERSION=77.1
 
 FROM php:${PHP_VERSION}-cli
 
@@ -11,7 +11,7 @@ ENV BUILD_DEPS="autoconf file pkg-config re2c"
 ENV LIB_DEPS="zlib1g-dev libzip-dev"
 ENV TOOL_DEPS="git build-essential"
 ENV ICU_RELEASE=$ICU_VERSION
-ENV CXXFLAGS "--std=c++0x"
+ENV CXXFLAGS "-std=c++20 -fext-numeric-literals"
 
 RUN apt-get update && apt-get install -y --no-install-recommends $BUILD_DEPS $LIB_DEPS $TOOL_DEPS && rm -rf /var/lib/apt/lists/* \
  && echo "date.timezone=Europe/Warsaw" >> $PHP_INI_DIR/php.ini \
